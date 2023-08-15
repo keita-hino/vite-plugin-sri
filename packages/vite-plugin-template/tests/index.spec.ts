@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { pluginFunction } from '../src';
+import { sri } from '../src';
 
-describe('vite-plugin-template', () => {
+describe('vite-plugin-sri', () => {
 	it('should be named', function () {
-		expect(pluginFunction().name).toBe('vite-plugin-template');
+		expect(sri().name).toBe('vite-plugin-sri');
 	});
 });

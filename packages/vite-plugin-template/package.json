@@ -1,8 +1,8 @@
 {
-  "name": "@svitejs/vite-plugin-template",
+  "name": "@keita-hino/vite-plugin-sri",
   "version": "0.0.0",
   "license": "MIT",
-  "author": "~~AUTHOR~~",
+  "author": "keita hino",
   "private": true,
   "type": "module",
   "module": "dist/index.js",
@@ -24,13 +24,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/svitejs/vite-plugin-template.git",
-    "directory": "packages/vite-plugin-template"
+    "url": "git+https://github.com/keita-hino/vite-plugin-sri.git",
+    "directory": "packages/vite-plugin-sri"
   },
   "bugs": {
-    "url": "https://github.com/svitejs/vite-plugin-template/issues"
+    "url": "https://github.com/keita-hino/vite-plugin-sri/issues"
   },
-  "homepage": "https://github.com/svitejs/vite-plugin-template/tree/main/packages/vite-plugin-template#readme",
+  "homepage": "https://github.com/keita-hino/vite-plugin-sri/tree/main/packages/vite-plugin-sri#readme",
   "peerDependencies": {
     "vite": "^3.0.4"
   },

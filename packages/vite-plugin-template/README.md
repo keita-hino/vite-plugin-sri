@@ -1,11 +1,11 @@
-# @svitejs/vite-plugin-template
+# @keita-hino/vite-plugin-sri
 
 PROJECT TAGLINE HERE
 
 ## Installation
 
 ```bash
-pnpm i -D @svitejs/vite-plugin-template
+pnpm i -D @keita-hino/vite-plugin-sri
 ```
 
 ## Usage
@@ -15,11 +15,11 @@ pnpm i -D @svitejs/vite-plugin-template
 ```ts
 // vite config
 import { defineConfig } from 'vite';
-import { pluginFunction } from '@svitejs/vite-plugin-template';
+import { sri } from '@keita-hino/vite-plugin-sri';
 
 export default defineConfig({
 	plugins: [
-		pluginFunction({
+		sri({
 			/* plugin options */
 		})
 	]
