@@ -1,5 +1,5 @@
 {
-  "name": "@keita-hino/vite-plugin-sri",
+  "name": "vite-plugin-sri",
   "version": "0.0.0",
   "license": "MIT",
   "author": "keita hino",
@@ -35,6 +35,7 @@
     "vite": "^3.0.4"
   },
   "devDependencies": {
+    "cheerio": "1.0.0-rc.12",
     "vite": "^3.2.7",
     "vitest": "^0.32.0"
   }
