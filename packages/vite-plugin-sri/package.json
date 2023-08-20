@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "license": "MIT",
   "author": "keita hino",
-  "private": true,
   "type": "module",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
