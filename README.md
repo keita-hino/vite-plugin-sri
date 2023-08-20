@@ -5,7 +5,15 @@ This is a Vite plugin for adding [Subresource Integrity](https://developer.mozil
 ## Installation
 
 ```bash
-pnpm i -D @keita-hino/vite-plugin-sri2
+$ yarn add vite-plugin-sri2 -D
+
+# or
+
+$ npm install vite-plugin-sri2 -D
+
+# or
+
+$ pnpm install vite-plugin-sri2 -D
 ```
 
 ## Usage
