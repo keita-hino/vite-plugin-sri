@@ -1,5 +1,5 @@
 {
-  "name": "@keita-hino/test-vite-plugin-sri",
+  "name": "@keita-hino/test-vite-plugin-sri2",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,6 +11,6 @@
   },
   "devDependencies": {
     "vite": "^4.4.9",
-    "vite-plugin-sri": "workspace:*"
+    "vite-plugin-sri2": "workspace:*"
   }
 }

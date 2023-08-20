@@ -4,7 +4,7 @@ import { calculateSRI } from './sri';
 
 export function sri(): Plugin {
   return {
-    name: 'vite-plugin-sri',
+    name: 'vite-plugin-sri2',
     enforce: 'post',
     transformIndexHtml: {
       enforce: 'post',
