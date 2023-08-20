@@ -1,5 +1,11 @@
 # vite-plugin-sri2
 
+## 0.2.1
+
+### Patch Changes
+
+- Update installation section of README ([`d46b11c`](https://github.com/keita-hino/vite-plugin-sri/commit/d46b11c5bbbd00c241fc9246f894881ae9563f98))
+
 ## 0.2.0
 
 ### Minor Changes
