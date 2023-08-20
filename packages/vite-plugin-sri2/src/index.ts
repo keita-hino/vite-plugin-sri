@@ -20,7 +20,6 @@ export function sri(): Plugin {
           if (src) {
             // FIXME: Loading of external resources
             const resourcePath = new URL(src, import.meta.url).pathname.substring(1);
-            // FIXME: もっと良い書き方
             if (!context.bundle) {
               return;
             }
