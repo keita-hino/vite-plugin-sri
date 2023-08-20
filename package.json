@@ -1,9 +1,9 @@
 {
-  "name": "vite-plugin-template-monorepo",
+  "name": "vite-plugin-sri-monorepo",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "pnpm --dir packages/vite-plugin-template dev",
+    "dev": "pnpm --dir packages/vite-plugin-sri dev",
     "build": "pnpm -r build",
     "test": "pnpm -r --workspace-concurrency=1 test",
     "lint": "eslint --ignore-path .gitignore '**/*.{js,ts,html,md}'",
@@ -46,16 +46,16 @@
       "prettier --write"
     ]
   },
-  "packageManager": "pnpm@7.8.0",
+  "packageManager": "pnpm@8.6.0",
   "engines": {
-    "pnpm": "^7.8.0",
+    "pnpm": "^8.6.0",
     "yarn": "forbidden, use pnpm",
     "npm": "forbidden, use pnpm",
     "node": "^14.18.0 || ^16 || >= 18"
   },
   "pnpm": {
     "overrides": {
-      "@svitejs/vite-plugin-template": "workspace:*"
+      "@keita-hino/vite-plugin-sri": "workspace:*"
     }
   }
 }

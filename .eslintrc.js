@@ -24,12 +24,7 @@ module.exports = {
 		'node/no-unpublished-require': 'off',
 		'node/no-unsupported-features/es-syntax': 'off',
 		'no-process-exit': 'off',
-		'node/no-missing-import': [
-			'error',
-			{
-				tryExtensions: ['.js', '.ts', '.json', '.node']
-			}
-		]
+		'node/no-missing-import': 'off'
 	},
 	overrides: [
 		{

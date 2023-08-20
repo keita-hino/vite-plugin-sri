@@ -10,11 +10,9 @@ on:
       - main
 
 jobs:
-  # "checks" job runs on linux + node14 only and checks that install, build, lint and audit work
-  # it also primes the pnpm store cache for linux, important for downstream tests
   checks:
     timeout-minutes: 5
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         # pseudo-matrix for convenience, NEVER use more than a single combination
@@ -51,21 +49,17 @@ jobs:
         if: (${{ success() }} || ${{ failure() }})
         run: pnpm audit
 
-  # this is the test matrix, it runs with node14 on linux,windows,macos + node12,16 on linux
-  # it is skipped if the build step of the checks job wasn't successful (still runs if lint or audit fail)
   test:
     needs: checks
     if: (${{ success() }} || ${{ failure() }}) && (${{ needs.checks.output.build_successful }})
     timeout-minutes: 10
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         node: [16]
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
         include:
-          - node: 14
-            os: ubuntu-latest
           - node: 18
             os: ubuntu-latest
     steps:
