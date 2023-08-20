@@ -1,5 +1,11 @@
 # vite-plugin-sri2
 
+## 0.2.4
+
+### Patch Changes
+
+- fix repo name ([`c0a1255`](https://github.com/keita-hino/vite-plugin-sri/commit/c0a125575f8f2bfb3c1665f70129523b28375ed5))
+
 ## 0.2.3
 
 ### Patch Changes
