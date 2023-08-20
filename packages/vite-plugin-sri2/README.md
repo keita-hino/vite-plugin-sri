@@ -23,7 +23,7 @@ $ pnpm install vite-plugin-sri2 -D
 ```ts
 // vite config
 import { defineConfig } from 'vite';
-import { sri } from '@keita-hino/vite-plugin-sri2';
+import { sri } from 'vite-plugin-sri2';
 
 export default defineConfig({
   plugins: [sri()]
