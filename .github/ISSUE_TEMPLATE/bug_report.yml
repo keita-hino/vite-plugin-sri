@@ -1,11 +1,11 @@
 name: "\U0001F41E Bug report"
-description: Report an issue with vite-plugin-sri
+description: Report an issue with vite-plugin-sri2
 labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for participating in vite-plugin-sri! Please check for existing reports before creating a new one.
+        Thank you for participating in vite-plugin-sri2! Please check for existing reports before creating a new one.
   - type: textarea
     id: bug-description
     attributes:
@@ -32,7 +32,7 @@ body:
     id: system-info
     attributes:
       label: System Info
-      description: Output of `npx envinfo --system --binaries --browsers --npmPackages "{@keita-hino/vite-plugin-sri}"`
+      description: Output of `npx envinfo --system --binaries --browsers --npmPackages "{@keita-hino/vite-plugin-sri2}"`
       render: shell
       placeholder: System, Binaries, Browsers
     validations:
@@ -45,6 +45,6 @@ body:
       options:
         - annoyance
         - blocking an upgrade
-        - blocking all usage of vite-plugin-sri
+        - blocking all usage of vite-plugin-sri2
     validations:
       required: true

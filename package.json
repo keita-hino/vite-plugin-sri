@@ -1,9 +1,9 @@
 {
-  "name": "vite-plugin-sri-monorepo",
+  "name": "vite-plugin-sri2-monorepo",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "pnpm --dir packages/vite-plugin-sri dev",
+    "dev": "pnpm --dir packages/vite-plugin-sri2 dev",
     "build": "pnpm -r build",
     "test": "pnpm -r --workspace-concurrency=1 test",
     "lint": "eslint --ignore-path .gitignore '**/*.{js,ts,html,md}'",
@@ -55,7 +55,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@keita-hino/vite-plugin-sri": "workspace:*"
+      "@keita-hino/vite-plugin-sri2": "workspace:*"
     }
   }
 }
