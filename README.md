@@ -1,6 +1,9 @@
 # vite-plugin-sri2
 
-This is a Vite plugin for adding [Subresource Integrity](https://developer.mozilla.org/ja/docs/Web/Security/Subresource_Integrity).
+Vite Plugin SRI2 adds [Subresource Integrity (SRI)](https://developer.mozilla.org/ja/docs/Web/Security/Subresource_Integrity) to the `<script>` and `<link>` elements in your "index.html" file during at build time.
+
+Below are examples of how the `<script>` and `<link>` elements in your built "index.html" file would look like after SRI attributes have been added:  
+<img width="1039" alt="スクリーンショット 2023-08-22 8 58 51" src="https://github.com/keita-hino/vue-tsc-action/assets/15973671/d32422ed-a248-440b-a320-99e253909a3e">
 
 ## Installation
 
