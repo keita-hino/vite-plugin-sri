@@ -1,5 +1,11 @@
 # vite-plugin-sri2
 
+## 0.2.5
+
+### Patch Changes
+
+- update document ([`931cfec`](https://github.com/keita-hino/vite-plugin-sri/commit/931cfec501bddb37b96d19c86e2bc256aec4e406))
+
 ## 0.2.4
 
 ### Patch Changes
