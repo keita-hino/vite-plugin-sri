@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-sri2",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "author": "keita hino",
   "type": "module",
