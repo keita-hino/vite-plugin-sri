@@ -17,21 +17,23 @@ export function sri(): Plugin {
 
         elements.forEach((element) => {
           const src = $(element).attr('src') || $(element).attr('href');
-          if (src) {
-            // FIXME: Loading of external resources
-            const resourcePath = new URL(src, import.meta.url).pathname.substring(1);
-            if (!context.bundle) {
-              return;
-            }
-
-            const bundleResource = context.bundle[resourcePath];
-
-            const source =
-              bundleResource.type === 'asset' ? bundleResource.source : bundleResource.code;
-
-            const sri = calculateSRI(source);
-            $(element).attr('integrity', sri);
+          if (!src) {
+            return;
           }
+
+          // FIXME: Loading of external resources
+          const resourcePath = new URL(src, import.meta.url).pathname.substring(1);
+          if (!context.bundle) {
+            return;
+          }
+
+          const bundleResource = context.bundle[resourcePath];
+
+          const source =
+            bundleResource.type === 'asset' ? bundleResource.source : bundleResource.code;
+
+          const sri = calculateSRI(source);
+          $(element).attr('integrity', sri);
         });
         return $.html();
       }
