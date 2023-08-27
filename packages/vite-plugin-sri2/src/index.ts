@@ -8,17 +8,31 @@ export function sri(): Plugin {
     enforce: 'post',
     transformIndexHtml: {
       enforce: 'post',
-      transform(html, context) {
+      async transform(html, context) {
         const $ = cheerio.load(html);
         const scriptElements = $('script[src]');
         const stylesheetElements = $('link[rel="stylesheet"][href]');
 
         const elements = [...scriptElements, ...stylesheetElements];
 
-        elements.forEach((element) => {
+        for (const element of elements) {
           const src = $(element).attr('src') || $(element).attr('href');
-          if (src) {
-            // FIXME: Loading of external resources
+          if (!src) {
+            return;
+          }
+
+          let source: string | Uint8Array = '';
+
+          if (src.startsWith('http')) {
+            try {
+              const response = await fetch(src);
+              if (response.ok) {
+                source = await response.text();
+              }
+            } catch (error) {
+              console.error(`Failed to fetch resource: ${src}`, error);
+            }
+          } else {
             const resourcePath = new URL(src, import.meta.url).pathname.substring(1);
             if (!context.bundle) {
               return;
@@ -26,13 +40,12 @@ export function sri(): Plugin {
 
             const bundleResource = context.bundle[resourcePath];
 
-            const source =
-              bundleResource.type === 'asset' ? bundleResource.source : bundleResource.code;
-
-            const sri = calculateSRI(source);
-            $(element).attr('integrity', sri);
+            source = bundleResource.type === 'asset' ? bundleResource.source : bundleResource.code;
           }
-        });
+
+          const sri = calculateSRI(source);
+          $(element).attr('integrity', sri);
+        }
         return $.html();
       }
     }
