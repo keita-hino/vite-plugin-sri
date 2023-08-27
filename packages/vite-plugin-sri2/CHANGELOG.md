@@ -1,5 +1,11 @@
 # vite-plugin-sri2
 
+## 0.3.0
+
+### Minor Changes
+
+- Add support for third-party asset ([#14](https://github.com/keita-hino/vite-plugin-sri/pull/14))
+
 ## 0.2.5
 
 ### Patch Changes
