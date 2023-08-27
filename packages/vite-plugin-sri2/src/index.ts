@@ -1,10 +1,11 @@
 import { Plugin } from 'vite';
 import * as cheerio from 'cheerio';
 import { calculateSRI } from './sri';
+import { pluginName } from './grobals';
 
 export function sri(): Plugin {
   return {
-    name: 'vite-plugin-sri2',
+    name: pluginName,
     enforce: 'post',
     transformIndexHtml: {
       enforce: 'post',
@@ -30,7 +31,7 @@ export function sri(): Plugin {
                 source = await response.text();
               }
             } catch (error) {
-              console.error(`Failed to fetch resource: ${src}`, error);
+              console.error(`[${pluginName}] Failed to fetch resource: ${src}`, error);
             }
           } else {
             const resourcePath = new URL(src, import.meta.url).pathname.substring(1);
