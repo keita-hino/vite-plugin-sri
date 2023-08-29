@@ -1,10 +1,12 @@
 import { Plugin } from 'vite';
 import * as cheerio from 'cheerio';
 import { calculateSRI } from './sri';
+import { pluginName } from './grobals';
+import { isThirdPartyAsset, fetchResource, getSourceFromBundle } from './resourceHelpers';
 
 export function sri(): Plugin {
   return {
-    name: 'vite-plugin-sri2',
+    name: pluginName,
     enforce: 'post',
     transformIndexHtml: {
       enforce: 'post',
@@ -15,37 +17,19 @@ export function sri(): Plugin {
 
         const elements = [...scriptElements, ...stylesheetElements];
 
-        for (const element of elements) {
-          const src = $(element).attr('src') || $(element).attr('href');
-          if (!src) {
-            return;
+        if (context.bundle) {
+          for (const element of elements) {
+            const src = ($(element).attr('src') || $(element).attr('href')) as string;
+
+            const source = isThirdPartyAsset(src)
+              ? await fetchResource(src)
+              : getSourceFromBundle(context.bundle, src);
+
+            const sri = calculateSRI(source);
+            $(element).attr('integrity', sri);
           }
-
-          let source: string | Uint8Array = '';
-
-          if (src.startsWith('http')) {
-            try {
-              const response = await fetch(src);
-              if (response.ok) {
-                source = await response.text();
-              }
-            } catch (error) {
-              console.error(`Failed to fetch resource: ${src}`, error);
-            }
-          } else {
-            const resourcePath = new URL(src, import.meta.url).pathname.substring(1);
-            if (!context.bundle) {
-              return;
-            }
-
-            const bundleResource = context.bundle[resourcePath];
-
-            source = bundleResource.type === 'asset' ? bundleResource.source : bundleResource.code;
-          }
-
-          const sri = calculateSRI(source);
-          $(element).attr('integrity', sri);
         }
+
         return $.html();
       }
     }
