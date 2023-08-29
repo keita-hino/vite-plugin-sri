@@ -19,7 +19,7 @@
     "test:coverage": "vitest --coverage"
   },
   "engines": {
-    "node": "^14.18.0 || ^16.0.0 || >=18"
+    "node": ">=18"
   },
   "repository": {
     "type": "git",
