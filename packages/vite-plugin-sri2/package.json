@@ -37,6 +37,8 @@
     "cheerio": "1.0.0-rc.12"
   },
   "devDependencies": {
+    "msw": "^1.2.5",
+    "rollup": "^3.28.1",
     "vite": "^4.4.9",
     "vitest": "^0.34.3"
   }
