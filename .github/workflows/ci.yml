@@ -1,4 +1,4 @@
-# build and test on linux, windows, mac with node 12, 14, 16
+# build and test on linux with node 18, 20
 name: CI
 
 on:
@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # pseudo-matrix for convenience, NEVER use more than a single combination
-        node: [16]
+        node: [18]
         os: [ubuntu-latest]
     outputs:
       build_successful: ${{ steps.build.outcome == 'success' }}
@@ -57,10 +57,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [16]
+        node: [18]
         os: [ubuntu-latest]
         include:
-          - node: 18
+          - node: 20
             os: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
