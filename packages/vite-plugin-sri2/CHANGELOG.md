@@ -1,5 +1,15 @@
 # vite-plugin-sri2
 
+## 0.3.1
+
+### Patch Changes
+
+- Remove support for Node.js 16 ([#19](https://github.com/keita-hino/vite-plugin-sri/pull/19))
+
+- Bump dependencies ([#16](https://github.com/keita-hino/vite-plugin-sri/pull/16))
+
+- Refactor and add tests ([#18](https://github.com/keita-hino/vite-plugin-sri/pull/18))
+
 ## 0.3.0
 
 ### Minor Changes
