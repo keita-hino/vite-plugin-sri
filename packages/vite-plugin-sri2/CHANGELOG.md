@@ -1,5 +1,11 @@
 # vite-plugin-sri2
 
+## 0.4.0
+
+### Minor Changes
+
+- Change repo name ([#20](https://github.com/keita-hino/vite-plugin-sri2/pull/20))
+
 ## 0.3.1
 
 ### Patch Changes
