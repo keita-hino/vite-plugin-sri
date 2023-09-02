@@ -23,13 +23,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keita-hino/vite-plugin-sri.git",
+    "url": "git+https://github.com/keita-hino/vite-plugin-sri2.git",
     "directory": "packages/vite-plugin-sri2"
   },
   "bugs": {
-    "url": "https://github.com/keita-hino/vite-plugin-sri/issues"
+    "url": "https://github.com/keita-hino/vite-plugin-sri2/issues"
   },
-  "homepage": "https://github.com/keita-hino/vite-plugin-sri/tree/main/packages/vite-plugin-sri2#readme",
+  "homepage": "https://github.com/keita-hino/vite-plugin-sri2/tree/main/packages/vite-plugin-sri2#readme",
   "peerDependencies": {
     "vite": "^3.0.4"
   },
