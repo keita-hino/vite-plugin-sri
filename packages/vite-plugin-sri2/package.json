@@ -29,6 +29,13 @@
   "bugs": {
     "url": "https://github.com/keita-hino/vite-plugin-sri2/issues"
   },
+  "keywords": [
+    "vite",
+    "plugin",
+    "sri",
+    "subresource",
+    "integrity"
+  ],
   "homepage": "https://github.com/keita-hino/vite-plugin-sri2/tree/main/packages/vite-plugin-sri2#readme",
   "peerDependencies": {
     "vite": "^3.0.4"
