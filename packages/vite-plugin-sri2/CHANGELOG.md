@@ -1,5 +1,13 @@
 # vite-plugin-sri2
 
+## 1.0.0
+
+### Major Changes
+
+- Bump dependencies ([#24](https://github.com/keita-hino/vite-plugin-sri2/pull/24))
+
+- Add keywords for package ([#22](https://github.com/keita-hino/vite-plugin-sri2/pull/22))
+
 ## 0.4.0
 
 ### Minor Changes
