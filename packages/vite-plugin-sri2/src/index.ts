@@ -1,10 +1,22 @@
 import { Plugin } from 'vite';
 import * as cheerio from 'cheerio';
 import { calculateSRI } from './sri';
-import { pluginName } from './grobals';
+import { pluginName, type StandardHashFunctionName } from './grobals';
 import { isThirdPartyAsset, fetchResource, getSourceFromBundle } from './resourceHelpers';
 
-export function sri(): Plugin {
+export interface Options {
+  hashFunctionName: StandardHashFunctionName;
+}
+
+const DEFAULT_OPTIONS: Options = {
+  hashFunctionName: 'sha256'
+};
+
+export function sri(inlineOptions?: Partial<Options>): Plugin {
+  const options = {
+    ...DEFAULT_OPTIONS,
+    ...inlineOptions
+  };
   return {
     name: pluginName,
     enforce: 'post',
@@ -25,7 +37,7 @@ export function sri(): Plugin {
               ? await fetchResource(src)
               : getSourceFromBundle(context.bundle, src);
 
-            const sri = calculateSRI(source);
+            const sri = calculateSRI(options.hashFunctionName, source);
             $(element).attr('integrity', sri);
           }
         }
