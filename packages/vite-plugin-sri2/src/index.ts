@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import { calculateSRI } from './sri';
 import { pluginName, type StandardHashFunctionName } from './grobals';
 import { isThirdPartyAsset, fetchResource, getSourceFromBundle } from './resourceHelpers';
+import { validateOptions } from './validateOptions';
 
 export interface Options {
   hashFunctionName: StandardHashFunctionName;
@@ -23,6 +24,14 @@ export function sri(inlineOptions?: Partial<Options>): Plugin {
     transformIndexHtml: {
       enforce: 'post',
       async transform(html, context) {
+        const errorMessages = validateOptions(options);
+        if (errorMessages.length) {
+          // TODO: add custom error
+          const errorMessage = errorMessages
+            .map((message) => `[${pluginName}] ${message}`)
+            .join(', ');
+          throw new Error(errorMessage);
+        }
         const $ = cheerio.load(html);
         const scriptElements = $('script[src]');
         const stylesheetElements = $('link[rel="stylesheet"][href]');
