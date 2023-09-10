@@ -1,5 +1,13 @@
 # vite-plugin-sri2
 
+## 1.1.0
+
+### Minor Changes
+
+- Enable selection from multiple hash functions ([#25](https://github.com/keita-hino/vite-plugin-sri2/pull/25))
+
+- Throw an error if an invalid hash function is specified ([#27](https://github.com/keita-hino/vite-plugin-sri2/pull/27))
+
 ## 1.0.0
 
 ### Major Changes
