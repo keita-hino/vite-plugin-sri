@@ -1,6 +1,10 @@
 import { createHash } from 'crypto';
+import { StandardHashFunctionName } from './grobals';
 
-export function calculateSRI(content: string | Uint8Array) {
-  const hash = createHash('sha256').update(content).digest('base64');
-  return `sha256-${hash}`;
+export function calculateSRI(
+  hashFunctionName: StandardHashFunctionName,
+  content: string | Uint8Array
+) {
+  const hash = createHash(hashFunctionName).update(content).digest('base64');
+  return `${hashFunctionName}-${hash}`;
 }
