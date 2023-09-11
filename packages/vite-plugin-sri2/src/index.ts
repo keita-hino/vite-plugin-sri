@@ -10,7 +10,7 @@ export interface Options {
 }
 
 const DEFAULT_OPTIONS: Options = {
-  hashFunctionName: 'sha256'
+  hashFunctionName: 'sha384'
 };
 
 export function sri(inlineOptions?: Partial<Options>): Plugin {

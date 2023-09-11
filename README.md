@@ -38,12 +38,16 @@ export default defineConfig({
 ### hashFunctionName
 
 - Type : `string`
-- Default : `sha256`
+- Default : `sha384`
 
 The supported hash functions are `SHA-256`, `SHA-384`, and `SHA-512`.  
 This is in compliance with the [W3C specification](https://www.w3.org/TR/SRI/#cryptographic-hash-functions).
 
 > Conformant user agents must support the SHA-256, SHA-384 and SHA-512 cryptographic hash functions for use as part of a request’s integrity metadata and may support additional hash functions.
+
+The default is selected based on the [W3C specification](https://www.w3.org/TR/SRI/#hash-collision-attacks).
+
+> At the time of writing, SHA-384 is a good baseline.
 
 ## License
 
