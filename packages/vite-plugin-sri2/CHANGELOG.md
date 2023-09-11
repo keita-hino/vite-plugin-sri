@@ -1,5 +1,11 @@
 # vite-plugin-sri2
 
+## 2.0.0
+
+### Major Changes
+
+- Set default hashFunctionName to sha384 ([#28](https://github.com/keita-hino/vite-plugin-sri2/pull/28))
+
 ## 1.1.0
 
 ### Minor Changes
