@@ -20,10 +20,10 @@ describe('vite-plugin-sri2', () => {
     const stylesheetElements = $('link[rel="stylesheet"][href]');
 
     expect($(scriptElements[0]).attr('integrity')).toBe(
-      'sha256-FY+8RuCC5CIu80ehEhhOanOrLPt62B0y9WR9HNe1JKM='
+      'sha384-G3G1LHjDKUmCa06SPcYjWrahgXtm5vtb0ocSsiFsxXrwLoW0JIjmPzES6Nc2z9xA'
     );
     expect($(stylesheetElements[0]).attr('integrity')).toBe(
-      'sha256-hvtUv0ba70xxgFM+370bxTySIwOxWoJ2myk/yh8fiwA='
+      'sha384-dCLliT5+kyf/BWVXmLGWyw1gk+a6vCS78Vn7aRhdOT+2IHop/+xceezHjEm/4+PO'
     );
   });
 });
