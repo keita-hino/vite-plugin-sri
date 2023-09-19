@@ -1,5 +1,11 @@
 # vite-plugin-sri2
 
+## 2.0.1
+
+### Patch Changes
+
+- Bump devDependencies ([#30](https://github.com/keita-hino/vite-plugin-sri2/pull/30))
+
 ## 2.0.0
 
 ### Major Changes
