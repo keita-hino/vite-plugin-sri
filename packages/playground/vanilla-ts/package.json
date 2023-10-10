@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.4.9",
+    "vite": "^4.4.11",
     "vite-plugin-sri2": "workspace:*"
   }
 }
