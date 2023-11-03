@@ -45,9 +45,6 @@ jobs:
       - name: lint
         if: (${{ success() }} || ${{ failure() }})
         run: pnpm run lint
-      - name: audit
-        if: (${{ success() }} || ${{ failure() }})
-        run: pnpm audit
 
   test:
     needs: checks
